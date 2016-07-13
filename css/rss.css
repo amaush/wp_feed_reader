@@ -1,0 +1,23 @@
+.rssFeed{
+    background-color: #F2F2F3;
+    border-radius:15px;
+    padding:10px;
+    width:320px;
+    float: right;
+    height: 400px;
+    overflow: scroll;
+    font-size: 0.9rem;
+}
+
+.rssFeed p{
+    margin: 0;
+    padding: 0;
+}
+
+.rssFeed li{
+   list-style-type: none; 
+}
+
+
+
+
