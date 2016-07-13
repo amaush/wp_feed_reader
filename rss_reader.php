@@ -33,14 +33,12 @@ class FeedReader{
 
         curl_close($this->conn);
 
-        //return ($httpcode>=200 && $httpcode<300) ? $data : false;
         return $this;
     }
 
     function parse(){
         libxml_use_internal_errors(true);
 
-        //$this->content = new SimpleXMLElement($this->page_content);
         $this->content = simplexml_load_string($this->page_content)
             or die("Error: Cannot create object from XML");
         if($this->content === false){
@@ -75,11 +73,8 @@ class FeedReader{
 
 
 function rss_shortcode($atts){
-    //$rss->parse();
-    //$rss->display($count);
     $params = shortcode_atts(array(
-        'url' => '',
-        'count' => 5,
+        'url' => ''
     ), $atts);
     $rss = new FeedReader($params['url']);
     $result = $rss->request($params['url'])->parse();
